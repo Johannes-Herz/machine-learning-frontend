@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+
+    --app-highlight-color: rgb(52, 133, 255); 
+    --app-table-border-color: rgba(200, 200, 200, 0.6); 
+    --app-table-thead-background-color: rgba(225, 225, 225, 0.4);
+    --app-table-tbody-background-color: rgba(245, 245, 245, 0.2);
+    
+}

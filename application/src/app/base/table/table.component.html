@@ -1,0 +1,24 @@
+<div class="app-table-wrapper-div">
+    <table class="app-table-table">
+        <thead class="app-table-thead">
+            <tr class="app-table-tr">
+                <th class="app-table-th" *ngIf="thead.length">
+                    #
+                </th>
+                <th class="app-table-th" *ngFor="let th of thead" [class.hidden]="hiddenColumns.get(th)">
+                    {{ th }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="app-table-tbody">
+            <tr class="app-table-tr" *ngFor="let tr of tbody; let i = index">
+                <td class="app-table-td">
+                    {{ i }}
+                </td>
+                <td class="app-table-td" *ngFor="let td of tr; let j = index" [class.hidden]="hiddenColumns.get(thead[j])" (click)="onClick()">
+                    {{ td }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
