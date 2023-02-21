@@ -1,0 +1,40 @@
+<div class="app-data-table-wrapper-div">
+    <div class="app-data-table-toolbar">
+        <div class="app-data-table-toolbar-left">
+            <div class="app-data-table-toolbar-filename-label">
+                <span class="app-data-table-toolbar-filename-label-span">Filename: </span>
+                <span class="app-data-table-toolbar-filename-label-span">{{ filename }}</span>
+            </div>
+            <button class="app-data-table-toolbar-button">
+                <input class="app-data-table-toolbar-button-upload-input" type="file" (change)="onFileChange($event)"/>
+                <img class="app-data-table-toolbar-button-icon" src="assets/icons/data-table/upload.svg" alt=""/>
+            </button>
+        </div>
+        <div class="app-data-table-toolbar-right">
+            <button class="app-data-table-toolbar-button" (click)="onClear()">
+                <img class="app-data-table-toolbar-button-icon" src="assets/icons/data-table/clear.svg" alt=""/>
+            </button>
+            <button class="app-data-table-toolbar-button">
+                <img class="app-data-table-toolbar-button-icon" src="assets/icons/data-table/settings.svg" alt=""/>
+            </button>
+        </div>
+    </div>
+    <div class="app-data-table-app-table-div">
+        <app-table class="app-data-table-app-table" [thead]="headers" [tbody]="shrinkedData" [hiddenColumns]="hiddenColumns" [startingIndex]="pageId * itemsPerPage"></app-table>
+    </div>
+    <div class="app-data-table-pagination">
+        <button class="app-data-table-pagination-button" (click)="goToFirstPage()">
+            <img src="assets/icons/data-table/double-arrow-left.svg" alt=""/>
+        </button>
+        <button class="app-data-table-pagination-button" (click)="goOnePageBack()">
+            <img src="assets/icons/data-table/arrow-left.svg" alt=""/>
+        </button>
+        <span class="app-data-table-pagination-label">{{ pageId + 1 }} / {{ maxPage + 1 }}</span>
+        <button class="app-data-table-pagination-button" (click)="goOnePageFurther()">
+            <img src="assets/icons/data-table/arrow-right.svg" alt=""/>
+        </button>
+        <button class="app-data-table-pagination-button" (click)="goToLastPage()">
+            <img src="assets/icons/data-table/double-arrow-right.svg" alt=""/>
+        </button>
+    </div>
+</div>

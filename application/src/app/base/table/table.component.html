@@ -13,7 +13,7 @@
         <tbody class="app-table-tbody">
             <tr class="app-table-tr" *ngFor="let tr of tbody; let i = index">
                 <td class="app-table-td">
-                    {{ i }}
+                    {{ i + startingIndex + 1 }}
                 </td>
                 <td class="app-table-td" *ngFor="let td of tr; let j = index" [class.hidden]="hiddenColumns.get(thead[j])" (click)="onClick()">
                     {{ td }}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="settings" transform="translate(-2 -0.216)">
+    <rect id="Rectangle_57" data-name="Rectangle 57" width="32" height="32" transform="translate(2 0.216)" fill="rgba(255,255,255,0)"/>
+    <path id="Path_11" data-name="Path 11" d="M5.5,10A2.5,2.5,0,1,1,3,12.5,2.5,2.5,0,0,1,5.5,10Z" transform="translate(2.478 3.716)" fill="#3485ff"/>
+    <path id="Path_12" data-name="Path 12" d="M12.5,10A2.5,2.5,0,1,1,10,12.5,2.5,2.5,0,0,1,12.5,10Z" transform="translate(5.5 3.716)" fill="#3485ff"/>
+    <path id="Path_13" data-name="Path 13" d="M22,12.5A2.5,2.5,0,1,0,19.5,15,2.5,2.5,0,0,0,22,12.5Z" transform="translate(8.522 3.716)" fill="#3485ff"/>
+  </g>
+</svg>

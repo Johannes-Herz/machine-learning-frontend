@@ -1,8 +1,6 @@
 .app-table-wrapper-div{
     height: 100%;
     width: 100%;
-
-    overflow: auto;
 }
 
 .app-table-table{
@@ -13,7 +11,9 @@
 }
 
 .app-table-thead .app-table-tr{
+    transform: scale(1);
     background-color: var(--app-table-thead-background-color); 
+    box-shadow: 0 4px 2px -1px var(--app-table-thead-background-color);
 }
 
 .app-table-th{

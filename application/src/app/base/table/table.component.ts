@@ -9,6 +9,7 @@ export class TableComponent {
   @Input() thead: Array<string> = []; 
   @Input() tbody: Array<Array<any>> = []; 
   @Input() hiddenColumns: Map<any, boolean> = new Map<any, boolean>; 
+  @Input() startingIndex: number = 0; 
   @Input() clickListener: Function | null = null; 
 
   constructor() {}
