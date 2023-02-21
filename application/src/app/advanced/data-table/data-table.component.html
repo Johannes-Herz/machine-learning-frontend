@@ -14,9 +14,14 @@
             <button class="app-data-table-toolbar-button" (click)="onClear()">
                 <img class="app-data-table-toolbar-button-icon" src="assets/icons/data-table/clear.svg" alt=""/>
             </button>
-            <button class="app-data-table-toolbar-button">
+            <button class="app-data-table-toolbar-button" (click)="onSettingsClicked()">
                 <img class="app-data-table-toolbar-button-icon" src="assets/icons/data-table/settings.svg" alt=""/>
             </button>
+            <div class="app-data-table-toolbar-settings" [class.open]="settingsOpen">
+                <button class="app-data-table-toolbar-settings-item" *ngFor="let head of headers" [class.hidden]="hiddenColumns.get(head)" (click)="onHideColumn(head)">
+                    <span class="app-data-table-toolbar-settings-item-span">{{ head }}</span>
+                </button>
+            </div>
         </div>
     </div>
     <div class="app-data-table-app-table-div">

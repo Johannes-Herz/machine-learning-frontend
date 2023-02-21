@@ -163,3 +163,55 @@
     align-items: center;
     min-width: 60px;
 }
+
+.app-data-table-toolbar-settings{
+    display: none;
+}
+
+.app-data-table-toolbar-settings.open{
+    position: absolute;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    max-height: 240px;
+    min-width: 120px;
+    max-width: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    top: 48px; 
+    right: 12px;
+    
+    border-radius: 6px;
+    
+    z-index: 1; 
+
+    overflow: auto;
+}
+
+.app-data-table-toolbar-settings.open .app-data-table-toolbar-settings-item{
+    all: unset;
+
+    min-height: 36px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.app-data-table-toolbar-settings.open .app-data-table-toolbar-settings-item:hover .app-data-table-toolbar-settings-item-span{
+    text-decoration: line-through;
+}
+
+.app-data-table-toolbar-settings.open .app-data-table-toolbar-settings-item-span{
+    display: inline-flex;
+    align-items: center;
+}
+
+.app-data-table-toolbar-settings.open .app-data-table-toolbar-settings-item.hidden .app-data-table-toolbar-settings-item-span{
+    text-decoration: line-through;
+}

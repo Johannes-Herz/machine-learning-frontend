@@ -17,6 +17,7 @@ export class DataTableComponent implements OnInit {
   itemsPerPage: number = 10;
   pageId: number = 0; 
   shrinkedData: Array<Array<any>> = [];   
+  settingsOpen: boolean = false; 
 
   constructor(){
     this.headers = ["Feature1", "Feature2", "Feature3", "Feature4", "Feature5", "Feature6"];
@@ -57,6 +58,8 @@ export class DataTableComponent implements OnInit {
     this.hiddenColumns.set("Feature2", false);
     this.hiddenColumns.set("Feature3", false);
     this.hiddenColumns.set("Feature4", false);
+    this.hiddenColumns.set("Feature5", false);
+    this.hiddenColumns.set("Feature6", true);
   }
 
   ngOnInit(): void {
@@ -116,6 +119,14 @@ export class DataTableComponent implements OnInit {
   onClear(){
     if(this.clearListener){
       this.clearListener(); 
+    }
+  }
+  onSettingsClicked(){
+    this.settingsOpen = !this.settingsOpen; 
+  }
+  onHideColumn(column: string){
+    if(this.hideColumnListener){
+      this.hideColumnListener(column); 
     }
   }
 
