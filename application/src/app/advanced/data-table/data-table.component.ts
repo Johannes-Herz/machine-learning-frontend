@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-data-table',
@@ -14,14 +14,30 @@ export class DataTableComponent {
   @Input() hideColumnListener: Function | null = null; 
   @Input() clearListener: Function | null = null;
   maxPage: number = 0;
-  itemsPerPage: number = 10;
+  itemsPerPage: number = 30;
   pageId: number = 0; 
   shrinkedData: Array<Array<any>> = [];   
   settingsOpen: boolean = false; 
 
-  constructor(){}
+  ngOnChanges(changes: SimpleChanges) {
+    this.update(); 
+  }
 
-  updateShrinkedData(){
+  constructor(){
+    this.update(); 
+  }
+
+  update(){
+    this.maxPage = Math.ceil(this.data.length / this.itemsPerPage) - 1; 
+    if(this.maxPage < 0){
+      this.maxPage = 0; 
+    }
+    if(this.pageId > this.maxPage){
+      this.pageId = 0; 
+    }
+    this.updateData(); 
+  }  
+  updateData(){ 
     this.shrinkedData = [];
     for(let i = this.pageId * this.itemsPerPage; i < this.pageId * this.itemsPerPage + this.itemsPerPage; i++){
       if(!this.data[i]) {
@@ -32,28 +48,28 @@ export class DataTableComponent {
       }
     }
   }
-
+  
   goToFirstPage(){
     this.pageId = 0;
-    this.updateShrinkedData(); 
+    this.updateData(); 
   }
   goOnePageBack(){
     this.pageId -= 1;
     if(this.pageId < 0){
       this.pageId = 0;
     }
-    this.updateShrinkedData(); 
+    this.updateData(); 
   }
   goOnePageFurther(){
     this.pageId += 1;
     if(this.pageId > this.maxPage){
       this.pageId = this.maxPage;
     }
-    this.updateShrinkedData(); 
+    this.updateData(); 
   }
   goToLastPage(){
     this.pageId = this.maxPage;
-    this.updateShrinkedData(); 
+    this.updateData(); 
   }
 
   onFileChange(event: Event){

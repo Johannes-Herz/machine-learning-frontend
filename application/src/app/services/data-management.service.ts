@@ -61,12 +61,21 @@ export class DataManagementService {
   getData(){
     return this.data;
   }
-  getExcludedColumn(){
+  getExcludedColumns(){
     return this.excludedColumns; 
+  }
+  getFilename(){
+    if(this.file){
+      return this.file.name;
+    }
+    else {
+      return "";
+    } 
   }
 
   setExcludedColumn(column: string){
     this.excludedColumns.set(column, true);
+    this.executeDataChangeListener(); 
   }
 
   addDataChangeListener(listener: Function){
@@ -83,7 +92,6 @@ export class DataManagementService {
     this.clear();    
 
     this.file = file; 
-    console.log('File Upload triggered in <RegressionCache>: ', this.file); 
 
     const chunks = await this.readFile(this.file); 
     let array = chunks.map(row => {
@@ -94,6 +102,9 @@ export class DataManagementService {
       this.headers = header; 
     }
     this.data = array; 
+    if(this.data[this.data.length - 1].length !== this.headers.length){
+      this.data.pop(); 
+    }
     this.headers.forEach(item => {
       this.excludedColumns.set(item, false); 
     })

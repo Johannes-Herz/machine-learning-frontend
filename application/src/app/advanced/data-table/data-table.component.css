@@ -1,5 +1,5 @@
 .app-data-table-wrapper-div{
-    height: 100%;
+    height: calc(100% - 6px);
     width: 100%;
 }
 
@@ -88,8 +88,8 @@
 }
 
 .app-data-table-app-table-div{
-    height: calc(100% - 120px);
-    width: 100%;
+    height: calc(100% - 138px);
+    width: calc(100% - 2px);
     overflow: auto;
 }
 
@@ -161,7 +161,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    min-width: 60px;
+    min-width: 72px;
 }
 
 .app-data-table-toolbar-settings{
@@ -178,6 +178,7 @@
     max-width: 200px;
 
     display: flex;
+    display: none;
     flex-direction: column;
 
     top: 48px; 

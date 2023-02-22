@@ -1,0 +1,18 @@
+<div class="linear-regression-wrapper-div">
+    <div class="linear-regression-header">
+        <h1>Linear Regression</h1>
+    </div>
+    <div class="linear-regression-content">
+        <app-tab-sheet>
+            <app-tab title="Data">
+                <app-data-table [headers]="headers" [data]="data" [hiddenColumns]="hiddenColumns" [filename]="filename" [fileListener]="onFileChange.bind(this)" [hideColumnListener]="onHideColumn.bind(this)" [clearListener]="onClear.bind(this)"></app-data-table>
+            </app-tab>
+            <app-tab title="Settings">
+                Settings
+            </app-tab>
+            <app-tab title="Graph">
+                
+            </app-tab>
+        </app-tab-sheet>
+    </div>
+</div>

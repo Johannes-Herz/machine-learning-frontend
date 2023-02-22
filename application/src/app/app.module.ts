@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './base/table/table.component';
 import { DataTableComponent } from './advanced/data-table/data-table.component';
+import { TabSheetComponent } from './base/tab-sheet/tab-sheet.component';
+import { TabComponent } from './base/tab/tab.component';
+import { LinearRegressionComponent } from './pages/linear-regression/linear-regression.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    DataTableComponent
+    DataTableComponent,
+    TabSheetComponent,
+    TabComponent,
+    LinearRegressionComponent
   ],
   imports: [
     BrowserModule,

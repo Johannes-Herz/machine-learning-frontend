@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableComponent } from './base/table/table.component';
-import { DataTableComponent } from './advanced/data-table/data-table.component';
+import { LinearRegressionComponent } from './pages/linear-regression/linear-regression.component';
 
 const routes: Routes = [
-  {path: 'test', component: DataTableComponent}
+  {path: 'test', component: LinearRegressionComponent}
 ];
 
 @NgModule({
