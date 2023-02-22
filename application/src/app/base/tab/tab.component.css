@@ -1,0 +1,9 @@
+.app-tab-wrapper-div{
+    display: none; 
+}
+
+.app-tab-wrapper-div.active{
+    display: block;
+    height: 100%;
+    width: 100%;
+}

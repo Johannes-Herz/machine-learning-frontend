@@ -1,0 +1,10 @@
+<div class="app-tab-sheet-wrapper-div">
+    <div class="app-tab-sheet-header">
+        <button class="app-tab-sheet-header-item" [class.active]="i === selectedIndex" *ngFor="let title of tabTitles; let i = index" (click)="updateActiveTab(i)">
+            <span>{{ title }}</span>
+        </button>
+    </div>
+    <div class="app-tab-sheet-content">
+        <ng-content></ng-content>
+    </div>
+</div>
